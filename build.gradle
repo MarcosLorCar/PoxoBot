@@ -1,9 +1,15 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.2.20'
+    id 'com.gradleup.shadow' version '9.3.1'
+    id 'application'
 }
 
 group = 'me.orange'
 version = '1.0-SNAPSHOT'
+
+application {
+    mainClass.set('me.orange.MainKt')
+}
 
 repositories {
     mavenCentral()
@@ -21,5 +27,5 @@ test {
     useJUnitPlatform()
 }
 kotlin {
-    jvmToolchain(23)
+    jvmToolchain(21)
 }
