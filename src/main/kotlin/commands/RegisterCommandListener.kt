@@ -19,7 +19,7 @@ object RegisterCommandListener : ListenerAdapter() {
         val updateCommands = guild.updateCommands()
 
         updateCommands.addCommands(VolatileCommandListener.command)
-        updateCommands.addCommands(FemboyNamerListener.command)
+        updateCommands.addCommands(JoinautoroleCommandListener.command)
 
         updateCommands.queue()
     }
