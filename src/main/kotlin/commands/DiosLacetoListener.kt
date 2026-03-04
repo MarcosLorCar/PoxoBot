@@ -12,7 +12,7 @@ object DiosLacetoListener : ListenerAdapter() {
         val member = event.member
         val guild = event.guild
 
-        guild.modifyNickname(member, "Femboy Laceto")
+        guild.modifyNickname(member, "Femboy Laceto").queue()
         val channel = guild.getTextChannelById(1376936186085511168)
         channel?.sendMessage("Dios Lacteo será kickeado en 24h.")?.queue()
 
