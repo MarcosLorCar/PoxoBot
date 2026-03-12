@@ -1,5 +1,6 @@
 package me.orange.commands
 
+import me.orange.Config
 import me.orange.config
 import net.dv8tion.jda.api.Permission
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent
@@ -15,7 +16,7 @@ object JoinautoroleCommandListener : ListenerAdapter() {
     override fun onSlashCommandInteraction(event: SlashCommandInteractionEvent) {
         if (event.name != command.name) return
         if (event.guild == null) return
-        if (!event.member!!.hasPermission(Permission.MANAGE_SERVER) && event.member!!.idLong != 452207621668339723L) {
+        if (!event.member!!.hasPermission(Permission.MANAGE_SERVER) && event.member!!.idLong != Config.ORANGE_ID) {
             event.reply("You don't have permission to use this command.").setEphemeral(true).queue()
             return
         }

@@ -1,5 +1,6 @@
 package me.orange.commands
 
+import me.orange.Config
 import me.orange.config
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
@@ -21,7 +22,7 @@ object FemboyNamerListener : ListenerAdapter() {
         val guild = event.guild
 
         // Ignore ElDiosLacteo
-        if (member.user.idLong == 565160981949448212L) return
+        if (member.user.idLong == Config.DIOSLACETO_ID) return
 
         val entryRole = config.joinAutoRoles[guild.idLong]?.let { guild.getRoleById(it) }
 
