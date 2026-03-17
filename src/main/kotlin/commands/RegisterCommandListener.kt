@@ -21,6 +21,7 @@ object RegisterCommandListener : ListenerAdapter() {
         updateCommands.addCommands(VolatileCommandListener.command)
         updateCommands.addCommands(JoinautoroleCommandListener.command)
         updateCommands.addCommands(DiosLacetoListener.command)
+        updateCommands.addCommands(WerlybListener.command)
 
         updateCommands.queue()
     }

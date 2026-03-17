@@ -6,10 +6,13 @@ import me.orange.commands.FemboyNamerListener
 import me.orange.commands.JoinautoroleCommandListener
 import me.orange.commands.RegisterCommandListener
 import me.orange.commands.VolatileCommandListener
+import me.orange.commands.WerlybListener
+import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.requests.GatewayIntent
 
 lateinit var config: Config
+lateinit var jda: JDA
 
 fun main() {
     Persistence.loadConfig()
@@ -19,7 +22,7 @@ fun main() {
     })
 
     val token = System.getenv("DISCORD_BOT_TOKEN") ?: error("Missing token!")
-    val jda = JDABuilder.createDefault(token)
+    jda = JDABuilder.createDefault(token)
         .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES)
         .build()
 
@@ -28,4 +31,5 @@ fun main() {
     jda.addEventListener(JoinautoroleCommandListener)
     jda.addEventListener(FemboyNamerListener)
     jda.addEventListener(DiosLacetoListener)
+    jda.addEventListener(WerlybListener)
 }
